@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div style="margin:50px;" class="jumbotron">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1>login Form </h1>
+      <form [formGroup]='myForm'  (ngSubmit)="submit(myForm.value)">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" class="form-control" [formControl]="myForm.controls['username']" placeholder="Enter username" />
+            <div class="error" *ngIf="myForm.controls['username'].hasError('required') &&  myForm.controls['username'].touched">This field is required </div>
+            <div class="error" *ngIf="myForm.controls['username'].hasError('pattern') &&  myForm.controls['username'].dirty">Should contain only letters</div>
+            <div class="error" *ngIf="myForm.controls['username'].hasError('maxlength') &&  myForm.controls['username'].dirty && !myForm.controls['username'].hasError('pattern')">should contain only 8 letters</div>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-asterisk"></i></span>
+            <input type="password" class="form-control" [formControl]="myForm.controls['password']" placeholder="Enter password" />
+            <div class="error" *ngIf="myForm.controls['password'].hasError('required') &&  myForm.controls['password'].touched">This field is required </div>
+            <div class="error" *ngIf="myForm.controls['password'].hasError('pattern') &&  myForm.controls['password'].dirty">Should contain Upper Case , lowercase , number/special characters and min 8 chars</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" id="submit" [disabled]="myForm.invalid" class="form-control" value="Login" class="btn btn-primary"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<hr>

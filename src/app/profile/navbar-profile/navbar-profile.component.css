@@ -1,0 +1,18 @@
+.navbar-default{
+    background-color: darkcyan;
+}
+.navbar-brand{
+    color: white;
+}
+#links{
+    color: white;
+}
+.navbar-default .navbar-nav>.active>a{
+    background-color: darkkhaki;
+}
+.navbar{
+    border:none;
+}
+#home:hover{
+    color: white;
+}
