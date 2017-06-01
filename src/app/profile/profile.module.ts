@@ -8,7 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './profile.component';
 import { ProfileHomeComponent } from './profile-home/profile-home.component';
-
+import { routes } from '../app.routing' ;
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { ProfileHomeComponent } from './profile-home/profile-home.component';
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule ,
     ReactiveFormsModule,
     HttpModule
   ],

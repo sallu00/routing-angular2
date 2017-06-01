@@ -12,18 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileModule } from './profile/profile.module';
 import { AboutComponent } from './profile/about/about.component';
-const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  {
-    path: 'login/:user', children: [
-      { path: '', component: ProfileComponent } ,
-      { path:'about' , component : AboutComponent}
-    ]
-  },
-  { path: '**', component: HomeComponent }
-];
+import { ProfileHomeComponent } from './profile/profile-home/profile-home.component';
+import { routes } from './app.routing' ;
 
 @NgModule({
   declarations: [
@@ -37,12 +27,14 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
     FormsModule,
     ProfileModule,
+    RouterModule,
     ReactiveFormsModule,
+    routes,
     HttpModule
   ],
+  exports : [ LoginComponent , ProfileComponent , ProfileHomeComponent ] ,
   providers: [],
   bootstrap: [AppComponent]
 })

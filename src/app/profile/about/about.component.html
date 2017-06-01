@@ -1,3 +1,23 @@
-<p>
-  about works!
-</p>
+<div class="container-fluid">
+  <div style="margin:50px;" class="jumbotron">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1>Update message</h1>
+      <form [formGroup]='myMessage'  (ngSubmit)="submit(myMessage.value)">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
+            <textarea class="form-control" [formControl]="myMessage.controls['message']" row="15"></textarea>
+            <div class="error" *ngIf="myMessage.controls['message'].hasError('required') &&  myMessage.controls['message'].touched">This field is required </div>
+            <div class="error" *ngIf="myMessage.controls['message'].hasError('maxlength') &&  myMessage.controls['message'].dirty && !myForm.controls['message'].hasError('pattern')">should contain only 100 letters</div>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <input type="submit" id="submit" [disabled]="myMessage.invalid" class="form-control" value="UpdateMessage" class="btn btn-primary"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

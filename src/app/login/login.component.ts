@@ -24,10 +24,8 @@ export class LoginComponent implements OnInit {
   submit(value: any) {
     localStorage.setItem('username' , value.username);
     const user = localStorage.getItem('username');
-    const pass = localStorage.getItem('username');
+    const pass = localStorage.getItem('password');
     this.router.navigate(['/login' , user]);
-    console.log(user);
     this.myForm.reset(); // reset the form to its default values
   }
-
 }

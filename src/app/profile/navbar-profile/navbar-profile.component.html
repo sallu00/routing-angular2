@@ -7,23 +7,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-          <a id="home" class="navbar-brand" routerLink='home'>JustLogin</a>
+          <a id="home" class="navbar-brand" routerLink='/login/:user'>JustLogin</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li routerLinkActive="active"><a id="links"  routerLink='login/:user'>Home</a></li>
-            <li routerLinkActive="active"><a id="links"  routerLink='about'>About</a></li>
-            <li routerLinkActive="active"><a id="links"  routerLink='home'>Contact</a></li>
-            <li routerLinkActive="active"><a id="links"  routerLink='login'><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            <li [routerLink] = "['/login',username]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a id="links"  >Home</a></li>
+            <li routerLinkActive="active" routerLink='about'><a id="links" >About</a></li>
+            <li routerLinkActive="active" routerLink='contact'><a id="links" >Contact</a></li>
+            <li routerLinkActive="active"><a id="links" href="javascript:void(0);" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Logout</a></li>
           </ul>
         </div>
       </div>
     </nav>
-</div>
-<div class="container-fluid">
-  <div style="margin:150px;" class="jumbotron">
-    <h1>
-      GOOD MORNING {{username}} !!!!!!!
-    </h1>
-  </div>
 </div>
