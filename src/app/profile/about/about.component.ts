@@ -6,8 +6,7 @@ import { ProfileService } from '../profile-service.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css'],
-  providers: [ProfileService]
+  styleUrls: ['./about.component.css']
 
 })
 export class AboutComponent implements OnInit {
@@ -20,9 +19,10 @@ export class AboutComponent implements OnInit {
   }
   ngOnInit() {
   }
+
   submit(value: any) {
-    this._profileService.change(value);
+    console.log(value);
+    this._profileService.change(value.message);
     this.myMessage.reset();
   }
-
 }

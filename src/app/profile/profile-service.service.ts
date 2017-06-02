@@ -4,12 +4,20 @@ import { Subject } from 'rxjs/Subject';
 @Injectable() // may need to inject other dependencies in this service also
 
 export class ProfileService {
+
+    message : string = 'good morning';
     // Observable string source
-    private dataStringSource = new Subject<string>();
+    //private dataStringSource = new Subject<string>();
     // Observable string stream
-    dataString$ = this.dataStringSource.asObservable();
+    //dataString$ = this.dataStringSource.asObservable();
     // Service message commands
     change(data: string) {
-        this.dataStringSource.next(data);
+        console.log(data);
+        this.message=data;
+        
+    }
+    getvalue(){
+        console.log( this.message);
+        return this.message;
     }
 }

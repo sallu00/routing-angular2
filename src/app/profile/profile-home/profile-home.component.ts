@@ -6,19 +6,17 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-profile-home',
   templateUrl: './profile-home.component.html',
-  styleUrls: ['./profile-home.component.css'],
-  providers: [ProfileService]
+  styleUrls: ['./profile-home.component.css']
 })
 export class ProfileHomeComponent implements OnInit {
-  public message = 'Good morning';
+  public message : string;
   public username: string;
   subscription: Subscription;
   constructor(private route: ActivatedRoute, private _profileService: ProfileService) { }
   ngOnInit() {
-    this._profileService.dataString$.subscribe(
-      data => {
-        this.message = data;
-      });
+
+    this.message=this._profileService.getvalue();
+    console.log(this.message);
     const usern: any = this.route.snapshot.params['user'];
     this.username = usern;
   }
