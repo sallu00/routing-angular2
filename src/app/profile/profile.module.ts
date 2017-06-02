@@ -24,7 +24,7 @@ import { routes } from '../app.routing' ;
     ReactiveFormsModule,
     HttpModule
   ],
-  exports : [ NavbarProfileComponent , AboutComponent , ProfileHomeComponent ],
-  providers: [] 
+  exports: [ NavbarProfileComponent , AboutComponent , ProfileHomeComponent ],
+  providers: []
 })
 export class ProfileModule { }

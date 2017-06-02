@@ -6,15 +6,14 @@ import { ActivatedRoute , Router } from '@angular/router';
   styleUrls: ['./navbar-profile.component.css']
 })
 export class NavbarProfileComponent implements OnInit {
-
-  username:string;
-  constructor( private router : Router,
+  username: string;
+  constructor( private router: Router,
   private route: ActivatedRoute ) { }
   ngOnInit() {
     const usern: any = this.route.snapshot.params['user'];
     this.username = usern ;
   }
-  logout(){
+  logout() {
       this.router.navigate(['home']);
   }
 

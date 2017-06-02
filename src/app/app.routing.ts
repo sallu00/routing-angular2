@@ -13,25 +13,24 @@ import { AboutComponent } from './profile/about/about.component';
 import { ContactComponent } from './profile/contact/contact.component';
 import { ProfileHomeComponent } from './profile/profile-home/profile-home.component';
 
-export const PROFILE_ROUTES : Routes =[
+export const PROFILE_ROUTES: Routes = [
   { path: '', component: ProfileHomeComponent },
-  { path:'about' , component : AboutComponent},
-  { path:'contact' , component : ContactComponent}
-]
+  { path: 'about' , component: AboutComponent},
+  { path: 'contact' , component: ContactComponent}
+];
 
 export const router: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { 
-      path: 'login', children:[
-        {path: '' , component:LoginComponent},
+  {
+      path: 'login', children: [
+        {path: '' , component: LoginComponent},
         {
             path: ':user' ,
-            component:ProfileComponent,
+            component: ProfileComponent,
             children: PROFILE_ROUTES
         }
   ]},
   { path: '**', component: HomeComponent }
 ];
-
-export const routes : ModuleWithProviders=RouterModule.forRoot(router);
+export const routes: ModuleWithProviders = RouterModule.forRoot(router);

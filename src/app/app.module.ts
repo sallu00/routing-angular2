@@ -14,6 +14,7 @@ import { ProfileModule } from './profile/profile.module';
 import { AboutComponent } from './profile/about/about.component';
 import { ProfileHomeComponent } from './profile/profile-home/profile-home.component';
 import { routes } from './app.routing' ;
+import { ProfileService } from './profile/profile-service.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { routes } from './app.routing' ;
     HttpModule
   ],
   exports : [ LoginComponent , ProfileComponent , ProfileHomeComponent ] ,
-  providers: [],
+  providers: [ ProfileService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
