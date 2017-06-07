@@ -8,14 +8,16 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './profile.component';
 import { ProfileHomeComponent } from './profile-home/profile-home.component';
-import { routes } from '../app.routing' ;
-
+import { routes } from '../app.routing';
+import { FormComponent } from './form/form.component' ;
+import { ProfileService } from './profile-service.service';
 @NgModule({
   declarations: [
     NavbarProfileComponent,
     AboutComponent,
     ContactComponent,
     ProfileHomeComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,6 @@ import { routes } from '../app.routing' ;
     HttpModule
   ],
   exports: [ NavbarProfileComponent , AboutComponent , ProfileHomeComponent ],
-  providers: []
+  providers: [ ProfileService ]
 })
 export class ProfileModule { }

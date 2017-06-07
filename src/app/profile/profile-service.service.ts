@@ -5,19 +5,19 @@ import { Subject } from 'rxjs/Subject';
 
 export class ProfileService {
 
-    message : string = 'good morning';
-    // Observable string source
-    //private dataStringSource = new Subject<string>();
-    // Observable string stream
-    //dataString$ = this.dataStringSource.asObservable();
-    // Service message commands
-    change(data: string) {
+    message: string = 'good morning';
+    private notificationSource = new Subject<any>();
+    public notificationReceived = this.notificationSource.asObservable();
+    //parentSubject: Subject<any>=new Subject();
+    notify(notification: any) {
+        this.notificationSource.next(notification);
+    }
+    /*change(data: string) {
         console.log(data);
-        this.message=data;
-        
+        this.message = data;
     }
-    getvalue(){
-        console.log( this.message);
+    getvalue() {
+        console.log(this.message);
         return this.message;
-    }
+    }*/
 }

@@ -1,12 +1,4 @@
-<div class="container-fluid">
-  <div style="margin:150px;" class="jumbotron">
-    <h1>
-      {{message}} {{username}} !!!!!!!
-    </h1>
-  </div>
-</div>
-<div class="container-fluid">
-  <form #values='ngForm' (ngSubmit)="submit(values.value)">
+<form #values='ngForm' (ngSubmit)="submit(values.value)">
     <div class="form-group">
       <div class="input-group">
         <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
@@ -18,6 +10,4 @@
       <input type="submit" id="submit" class="form-control" value="UpdateMessage" class="btn btn-primary" />
     </div>
   </form>
-</div>
-<app-about [parentSubject]="childSubject" ></app-about>
-
+  
