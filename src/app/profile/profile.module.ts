@@ -11,6 +11,7 @@ import { ProfileHomeComponent } from './profile-home/profile-home.component';
 import { routes } from '../app.routing';
 import { FormComponent } from './form/form.component' ;
 import { ProfileService } from './profile-service.service';
+import { AuthService } from './profileAuth.service';
 @NgModule({
   declarations: [
     NavbarProfileComponent,
@@ -27,6 +28,6 @@ import { ProfileService } from './profile-service.service';
     HttpModule
   ],
   exports: [ NavbarProfileComponent , AboutComponent , ProfileHomeComponent ],
-  providers: [ ProfileService ]
+  providers: [ ProfileService , AuthService]
 })
 export class ProfileModule { }

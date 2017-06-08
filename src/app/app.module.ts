@@ -14,7 +14,10 @@ import { ProfileModule } from './profile/profile.module';
 import { AboutComponent } from './profile/about/about.component';
 import { ProfileHomeComponent } from './profile/profile-home/profile-home.component';
 import { routes } from './app.routing' ;
+import { loginGuard } from './profile/profile.guards';
 import { ProfileService } from './profile/profile-service.service';
+import { AuthService } from './profile/profileAuth.service';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { ProfileService } from './profile/profile-service.service';
     LoginComponent,
     NavbarComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,7 @@ import { ProfileService } from './profile/profile-service.service';
     HttpModule
   ],
   exports : [ LoginComponent , ProfileComponent , ProfileHomeComponent ] ,
-  providers: [ ProfileService ],
+  providers: [ ProfileService , loginGuard , AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

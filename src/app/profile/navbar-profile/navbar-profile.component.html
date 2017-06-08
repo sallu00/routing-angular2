@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-          <a id="home" class="navbar-brand" routerLink='/login/:user'>JustLogin</a>
+          <a id="home" class="navbar-brand" [routerLink] = "['/login',username]">JustLogin</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li [routerLink] = "['/login',username]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a id="links"  >Home</a></li>
-            <li routerLinkActive="active" routerLink='about'><a id="links" >About</a></li>
-            <li routerLinkActive="active" routerLink='contact'><a id="links" >Contact</a></li>
+            <li [routerLink] = "['/login',username]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a id="links"  >{{name_user.name }}</a></li>
+            <li routerLinkActive="active" routerLink='./about'><a id="links" >About</a></li>
+            <li routerLinkActive="active" routerLink='./contact'><a id="links" >Contact</a></li>
             <li routerLinkActive="active"><a id="links" href="javascript:void(0);" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Logout</a></li>
           </ul>
         </div>

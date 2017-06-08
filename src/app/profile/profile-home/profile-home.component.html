@@ -8,7 +8,7 @@
 <div class="container-fluid">
   <form #values='ngForm' (ngSubmit)="submit(values.value)">
     <div class="form-group">
-      <div class="input-group">
+      <div id="text" class="input-group">
         <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
         <textarea class="form-control" [(ngModel)]='val' name='val' row="15"></textarea>
       </div>
