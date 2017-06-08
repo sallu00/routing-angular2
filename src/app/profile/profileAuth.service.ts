@@ -13,16 +13,16 @@ export class AuthService {
         this.message='';
         this.user='';
         this.pass='';  
-        if(localStorage.getItem('myForm')!=null){
-            this.myForm=JSON.parse(localStorage.getItem('myForm'));
-            this.user=this.myForm.username;
-            this.pass=this.myForm.password;
-        }
     }
     ngOnInit(){
         
     }
     login(username: string , password: string): Boolean{
+        if(localStorage.getItem('myForm')!=null){
+            this.myForm=JSON.parse(localStorage.getItem('myForm'));
+            this.user=this.myForm.username;
+            this.pass=this.myForm.password;
+        }
         if(username==this.user && password==this.pass){
             alert('welcome');
             return true;
