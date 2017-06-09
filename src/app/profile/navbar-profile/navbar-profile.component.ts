@@ -13,7 +13,6 @@ export class NavbarProfileComponent implements OnInit {
   }
   ngOnInit() {
     this.name_user=JSON.parse(localStorage.getItem('myForm'));
-    console.log(this.name_user);
     const usern: any = this.route.snapshot.params['user'];
     this.username = usern ;
   }

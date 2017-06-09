@@ -8,9 +8,9 @@ import { AdvantagesComponent } from './advantages/advantages.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarProfileComponent } from './profile/navbar-profile/navbar-profile.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ProfileModule } from './profile/profile.module';
 import { AboutComponent } from './profile/about/about.component';
 import { ProfileHomeComponent } from './profile/profile-home/profile-home.component';
 import { routes } from './app.routing' ;
@@ -27,19 +27,18 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     NavbarComponent,
     HomeComponent,
+    NavbarProfileComponent,
     ProfileComponent,
     RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ProfileModule,
     RouterModule,
     ReactiveFormsModule,
     routes,
     HttpModule
   ],
-  exports : [ LoginComponent , ProfileComponent , ProfileHomeComponent ] ,
   providers: [ ProfileService , loginGuard , AuthService ],
   bootstrap: [AppComponent]
 })
