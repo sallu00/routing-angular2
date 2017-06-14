@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
+import * as loadermodule from 'angular2-loaders-css';
 import { FooterComponent } from './footer/footer.component';
 import { AdvantagesComponent } from './advantages/advantages.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -33,6 +34,7 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     BrowserModule,
+    loadermodule.LoadersCssModule,
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
